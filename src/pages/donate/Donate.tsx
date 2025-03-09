@@ -13,6 +13,7 @@ const Box = styled.div`
   flex-direction: column;
   gap: 22rem;
   font-weight: bold;
+  padding: 0 1rem;
 `;
 
 const DonateBox = styled.div`
@@ -84,8 +85,7 @@ export default function Donate() {
     <Box>
       <DonateBox>
         <TitleBox title="목표 금액까지 남은 금액">
-          {remainAmount}
-          <div></div>
+          {remainAmount.toLocaleString()}원<div></div>
         </TitleBox>
         <TitleBox title="기부 금액">
           <DonateInput
@@ -102,7 +102,7 @@ export default function Donate() {
       <Link to="/donateHome">
         <Btn bgColor={colors.LightBlue} handleBtn={fetchData}>
           <PressMotion>
-            <div style={{ width: '20.5rem' }}>기부 하기</div>
+            <div style={{ width: '21rem' }}>기부 하기</div>
           </PressMotion>
         </Btn>
       </Link>
